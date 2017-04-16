@@ -12,6 +12,7 @@ x = 1 + 2
 print(x)
 
 
+
 # esta variável fica guardada podendo ser-lhe aplicadas outras operações
 
 print(x * x)	# multiplicações
@@ -164,6 +165,62 @@ print(participantes2)
 # Para contornar isto fariamos: y = x[:], y corresponderia então a uma cópia da lista definida em x e não à própria lista! 
 # Podendo alterar-se y sem afetar x.
 
+
+# --------------- Functions --------------------
+
+# Bocado de código que pode serve para ser aplicado numa dada tarefa. Por exemplo, 
+# no tema "Variáveis" introduzimos a função type() que é usada para retornar o tipo 
+# da variável que escolhemos.
+# Outras funçoes uteis:
+# max() --> serve para determinar o maior elemento de uma lista, por exemplo.
+# round() --> serve para aredondar valores
+# len() --> serve para ver o tamanho de uma lista
+# help() --> serve para obter informação à cerca de outras funções do Python
+# Existem outras funções muito uteis e que podem tornar a execuçao do nosso código muito mais simples,
+# a melhor maneira de as descobrir é pesquisar na net o que queremos fazer e grande parte das vezes 
+# encontraremos respostas que nos encaminham para funções existentes no Pyhton.
+
+# Uma das funções que mais usaremos, para além do print() que como já vimos serve para......
+# é a função input() que serve para guardar numa variável uma String introduzida pelo utilizador
+# Por exemplo,
+
+idade = input("Qual a idade que davam ao Coelho? ") 
+print(type(idade)) # todo o tipo de dados introduzidos pelo comando input serão do tipo string
+
+# Imaginemos agora que queremos com essa idade calcular a sua data de nascimento
+
+# print("O ano de nascimento dele é então " 2017-idade)  # daria erro pois nao podemos somar um int com uma str
+# para podermos somar temos que converter a idade (tipo String) num integer usando o comando int()
+
+idade = int(idade) # ou entao logo no input idade = int(input("Qual a idade que davam ao Coelho? "))
+print("O ano de nascimento dele é então ", 2017 - idade)
+
+# --- Métodos
+#
+# Em Python tudo é um objeto e os objetos têm métodos a eles associados que variam consoante o seu tipo.
+# Por exemplo, as variáveis que temos usado até agora são objetos e são de diferentes tipos: string, integer....
+# Métodos são, então, funções especificas de cada objeto que variam consoante o tipo deste. Podendo não ser aplicaveis
+# para tipos diferentes ou simplesmente comportarem-se de maneira diferente.
+# 
+# Por exemplo,
+# Voltando à nossa lista de clubes, se quisermos adicionar o clube "Tondela" podemos faze-lo da forma que aprendemos
+# quando falamos nas listas, isto é:
+# clubes = clubes + ["Tondela"]
+# 
+# Ou podemos usar um método associado a objetos do tipo lista:
+print(clubes.index("Braga"))
+# Output 4
+
+# O método index pode ainda ser aplicado a objetos do tipo string:
+# Por exemplo, melhor_clube é do tipo string e está definido com "Sporting" 
+print(melhor_clube.index("S"))
+# Output 0
+
+# Existem outro comandos que podem explorar em relação as listas como o comando pop que retira da posicao indicada o elemento e retorna o para fora
+Braga = clubes.pop(4) # guardei-o na variavel nome
+print(Braga)
+print(clubes)
+
 ### Exercicio 5 - Como guardar os numeros inseridos por um utilizador numa lista?
 # Resolução
 numeros = list()
@@ -174,7 +231,6 @@ numeros.append(primeiro)
 numeros.append(segundo)
 numeros.append(terceiro)
 print(numeros)
-
 
 # -------------- Tuplos -----------
 
@@ -239,64 +295,6 @@ print(idades)
 #idades.popitem() Retira aleatoriamente e devolve um par
 #idades.update(dict2) Adiciona os pares (chave,valor) de dict2 a dict
 #idades.setdefault(key,default=None)) Como get mas actualiza o par com key:default
-
-
-
-
-# --------------- Functions --------------------
-
-# Bocado de código que pode serve para ser aplicado numa dada tarefa. Por exemplo, 
-# no tema "Variáveis" introduzimos a função type() que é usada para retornar o tipo 
-# da variável que escolhemos.
-# Outras funçoes uteis:
-# max() --> serve para determinar o maior elemento de uma lista, por exemplo.
-# round() --> serve para aredondar valores
-# len() --> serve para ver o tamanho de uma lista
-# help() --> serve para obter informação à cerca de outras funções do Python
-# Existem outras funções muito uteis e que podem tornar a execuçao do nosso código muito mais simples,
-# a melhor maneira de as descobrir é pesquisar na net o que queremos fazer e grande parte das vezes 
-# encontraremos respostas que nos encaminham para funções existentes no Pyhton.
-
-# Uma das funções que mais usaremos, para além do print() que como já vimos serve para......
-# é a função input() que serve para guardar numa variável uma String introduzida pelo utilizador
-# Por exemplo,
-
-idade = input("Qual a idade que davam ao Coelho? ") 
-print(type(idade)) # todo o tipo de dados introduzidos pelo comando input serão do tipo string
-
-# Imaginemos agora que queremos com essa idade calcular a sua data de nascimento
-
-# print("O ano de nascimento dele é então " 2017-idade)  # daria erro pois nao podemos somar um int com uma str
-# para podermos somar temos que converter a idade (tipo String) num integer usando o comando int()
-
-idade = int(idade) # ou entao logo no input idade = int(input("Qual a idade que davam ao Coelho? "))
-print("O ano de nascimento dele é então ", 2017 - idade)
-
-# --- Métodos
-#
-# Em Python tudo é um objeto e os objetos têm métodos a eles associados que variam consoante o seu tipo.
-# Por exemplo, as variáveis que temos usado até agora são objetos e são de diferentes tipos: string, integer....
-# Métodos são, então, funções especificas de cada objeto que variam consoante o tipo deste. Podendo não ser aplicaveis
-# para tipos diferentes ou simplesmente comportarem-se de maneira diferente.
-# 
-# Por exemplo,
-# Voltando à nossa lista de clubes, se quisermos adicionar o clube "Tondela" podemos faze-lo da forma que aprendemos
-# quando falamos nas listas, isto é:
-# clubes = clubes + ["Tondela"]
-# 
-# Ou podemos usar um método associado a objetos do tipo lista:
-print(clubes.index("Braga"))
-# Output 4
-
-# O método index pode ainda ser aplicado a objetos do tipo string:
-# Por exemplo, melhor_clube é do tipo string e está definido com "Sporting" 
-print(melhor_clube.index("S"))
-# Output 0
-
-# Existem outro comandos que podem explorar em relação as listas como o comando pop que retira da posicao indicada o elemento e retorna o para fora
-Braga = clubes.pop(4) # guardei-o na variavel nome
-print(Braga)
-print(clubes)
 
 
 
